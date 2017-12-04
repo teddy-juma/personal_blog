@@ -13,11 +13,11 @@
             <div class="blog-masthead">
                 <div class="container">
                   <nav class="nav">
-                    <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link" href="#">Games</a>
-                    <a class="nav-link" href="#">Press</a>
-                    <a class="nav-link" href="#">New hires</a>
-                    <a class="nav-link" href="#">About</a>
+                    <a {% if request.path == "/"%}class="nav-link active"{%else%}class="nav-link"{%endif%} href="/">Home</a>
+                    <a {% if request.path == "#"%}class="nav-link active"{%else%}class="nav-link"{%endif%} href="#">Games</a>
+                    <a {% if request.path == "#"%}class="nav-link active"{%else%}class="nav-link"{%endif%} href="#">Press</a>
+                    <a {% if request.path == "#"%}class="nav-link active"{%else%}class="nav-link"{%endif%} href="#">New hires</a>
+                    <a {% if request.path == "/about/"%}class="nav-link active"{%else%}class="nav-link"{%endif%} href="about/">About</a>
                   </nav>
                 </div>
               </div>

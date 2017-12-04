@@ -4,8 +4,8 @@ from .models import Post
 
 # Create your views here.
 
+def about(request):
 
-def home(request):
-    post = Post.objects.all().order_by('-date')
+    return render(request, template_name='home/about.html')
 
-    return render(request,"home/home.html",{'posts':post})
+
