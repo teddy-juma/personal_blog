@@ -8,3 +8,6 @@ class Post(models.Model):
     author = models.CharField(max_length=20)
     image = models.BinaryField(blank=True)
     content = models.TextField()
+
+    def __str__(self):
+        self.post_title

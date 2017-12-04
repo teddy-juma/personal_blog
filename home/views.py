@@ -6,6 +6,6 @@ from .models import Post
 
 
 def home(request):
-    post = Post.objects.filter(date=timezone.now()).order_by('date')
+    post = Post.objects.all().order_by('-date')
 
-    return render(request,"home/home.html",{'post':post})
+    return render(request,"home/home.html",{'posts':post})
