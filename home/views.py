@@ -1,7 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.utils import timezone
+from .models import Post
+
 # Create your views here.
 
 
 def home(request):
-    return render(request,template_name="home/base.html")
+    post = Post.objects.filter(date=timezone.now()).order_by('date')
+
+    return render(request,"home/home.html",{'post':post})
