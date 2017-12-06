@@ -9,7 +9,7 @@
         {% for post in object_list %}
             <div class="blog-post">
                 <h2 class="blog-post-title">{{post.post_title}}</h2>
-                <p class="blog-post-meta">{{ post.date|date:"Y-m-d" }} by  <a href="{{post.author}}">{{post.author}}</a></p>
+                <p class="blog-post-meta">{{ post.date|date:"Y-m-d" }} by  <a href="{{post.author.id}}">{{post.author}}</a></p>
                 <p>{{post.content}}</p>
             </div>
         {% endfor %}
@@ -19,25 +19,17 @@
         <aside class="col-sm-3 ml-sm-auto blog-sidebar">
             <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+            <p>This is a sample django application</p>
             </div>
             <div class="sidebar-module">
             <h4>Archives</h4>
             <ol class="list-unstyled">
 
                 <!-- Database access to be present at this place -->
-                <li><a href="#">March 2014</a></li>
-                <li><a href="#">February 2014</a></li>
-                <li><a href="#">January 2014</a></li>
-                <li><a href="#">December 2013</a></li>
-                <li><a href="#">November 2013</a></li>
-                <li><a href="#">October 2013</a></li>
-                <li><a href="#">September 2013</a></li>
-                <li><a href="#">August 2013</a></li>
-                <li><a href="#">July 2013</a></li>
-                <li><a href="#">June 2013</a></li>
-                <li><a href="#">May 2013</a></li>
-                <li><a href="#">April 2013</a></li>
+                {% for post in object_list%}
+                {% ifchanged %}<li><a href="{{post.date|date:"Y-m-d"}}">{{post.date}}</a></li>{% endifchanged %}
+                {% endfor%}
+                
             </ol>
             </div>
             <div class="sidebar-module">

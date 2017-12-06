@@ -143,6 +143,8 @@
   
   .blog-post {
     margin-bottom: 4rem;
+    box-shadow: 1px 2px 6px #888888;
+    padding: 20px;
   }
   .blog-post-title {
     margin-bottom: .25rem;
@@ -169,3 +171,7 @@
     margin-bottom: 0;
   }
   
+  .author_name{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #999;
+  }
