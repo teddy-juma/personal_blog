@@ -1,5 +1,9 @@
 {% extends "home/base.html"%}
 
 {% block content%}
-<p>This is the about me page</p>
+<div class="blog-about">
+    <h2 class="blog-post-title">About</h2>
+    <p class="blog-post-meta">I am a software developer</p>
+    <p>{{post.content}}</p>
+</div>
 {% endblock%}
